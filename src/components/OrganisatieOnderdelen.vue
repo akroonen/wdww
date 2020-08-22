@@ -1,15 +1,31 @@
 <template>
   <div>
-      <h1>Organisatie Onderdelen</h1>
+    <h1>Organisatie Onderdelen</h1>
+    <p>{{ OrganisatieHierarchie }}</p>
+    <TreeView :data="OrganisatieHierarchie"></TreeView>
   </div>
 </template>
 
 <script>
-export default {
+import TreeView from "vue-jstree";
 
-}
+export default {
+  name: "OrganisatieOnderdelen",
+  components: {
+    TreeView
+  },
+  data() {
+    return {
+      auteur: "Arko Kroonen",
+      OrganisatieHierarchie: [
+        {
+          text: "root",
+          children: [{ text: "Child One" }, { text: "Child Two" }]
+        }
+      ]
+    };
+  }
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
