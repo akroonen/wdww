@@ -1,19 +1,20 @@
 <template>
   <div>
     <h1>Organisatie Onderdelen</h1>
-    <p>{{ OrganisatieHierarchie }}</p>
     <TreeView :data="OrganisatieHierarchie"></TreeView>
   </div>
 </template>
 
 <script>
 import TreeView from 'vue-jstree'
+import { mapState } from 'vuex'
 
 export default {
   name: 'OrganisatieOnderdelen',
   components: {
     TreeView
   },
+  computed: mapState(['author']),
   data() {
     return {
       auteur: 'Arko Kroonen',
