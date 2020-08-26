@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1>Organisatie Onderdelen</h1>
+    <h1>Organisatie Onderdelen Test van {{author}}</h1>
     <TreeView :data="OrganisatieHierarchie"></TreeView>
   </div>
 </template>
 
 <script>
 import TreeView from 'vue-jstree'
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'OrganisatieOnderdelen',
@@ -16,8 +16,9 @@ export default {
   },
   created: () => {
     console.log('OrganisatieOnderdelen created')
+    OrganisatieHierarchie = $store
   },
-  computed: mapState(['author']),
+  computed: mapState(['author', 'tree']),
   data() {
     return {
       auteur: 'Arko Kroonen',

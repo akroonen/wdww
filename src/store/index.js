@@ -6,7 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    author: 'Arko Kroonen',
+    author: 'Arko Kroonen JS',
     tree: {}
   },
   mutations: {
