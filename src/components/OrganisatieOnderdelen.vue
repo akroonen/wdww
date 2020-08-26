@@ -14,6 +14,9 @@ export default {
   components: {
     TreeView
   },
+  created: () => {
+    console.log('OrganisatieOnderdelen created')
+  },
   computed: mapState(['author']),
   data() {
     return {

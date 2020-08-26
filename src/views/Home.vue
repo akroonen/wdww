@@ -16,6 +16,9 @@ export default {
   components: {
     // HelloWorld,
     OrganisatieOnderdelen
+  },
+  created: () => {
+    console.log('created')
   }
 }
 </script>
