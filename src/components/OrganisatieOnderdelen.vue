@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Organisatie Onderdelen Test van {{author}}</h1>
-    <TreeView :data="tree"></TreeView>
+    <TreeView :data="treedata" text-field-name="naam" children-field-name="onderdelen"></TreeView>
     <!-- <TreeView :data="OrganisatieHierarchie"></TreeView> -->
   </div>
 </template>
@@ -17,10 +17,10 @@ export default {
   },
   created() {
     console.log('OrganisatieOnderdelen created')
-    this.$store.dispatch('gettree')
+    // this.$store.dispatch('gettree')
     // OrganisatieHierarchie = $store
   },
-  computed: mapState(['author', 'tree']),
+  computed: mapState(['author', 'treedata']),
   data() {
     return {
       auteur: 'Arko Kroonen',

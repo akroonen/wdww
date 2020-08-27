@@ -7,22 +7,22 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     author: 'Arko Kroonen JS',
-    tree: [
+    treedata: [
       {
-        text: 'root',
-        children: [{ text: 'Child One' }, { text: 'Child Two' }]
+        naam: 'root',
+        onderdelen: [{ naam: 'Child One' }, { naam: 'Child Two' }]
       }
     ]
   },
   mutations: {
-    SETTREE(state, tree) {
-      this.state.tree = tree
+    SETTREE(state, treedata) {
+      this.state.treedata = treedata
     }
   },
   actions: {
     gettree(context) {
       axios
-        .get('http://study:3000/gettree')
+        .get('http://localhost:3000/gettree')
         .then(response => {
           console.log(response.data) // <--- set the events when returned
           context.commit('SETTREE', response.data)
